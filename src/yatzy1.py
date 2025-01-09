@@ -14,10 +14,10 @@ class Yatzy:
 
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
-        lista= (d1, d2, d3, d4, d5)
-        for i in range(1, 6):
-            if count(i) in lista== 2:
-                return 2 
+        lista =(d1, d2, d3, d4, d5)
+        unos=lista.count(1)
+        if unos>0:
+            return unos
         return 0
 
     @staticmethod
