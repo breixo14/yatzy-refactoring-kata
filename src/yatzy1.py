@@ -8,47 +8,34 @@ class Yatzy:
 
     @staticmethod
     def yatzy(dice):
-        if all(dado == dice[0] for dado in dice):
-            return Yatzy.FIFTY
-        return Yatzy.ZERO
+        return Yatzy.FIFTY if all(dado == dice[0] for dado in dice) else Yatzy.ZERO
+        
 
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
-        lista =(d1, d2, d3, d4, d5)
-        unos=lista.count(1)
+        dices =(d1, d2, d3, d4, d5)
+        unos=dices.count(1)
         if unos>0:
             return unos
         return 0
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 2):
-            sum += 2
-        if (d2 == 2):
-            sum += 2
-        if (d3 == 2):
-            sum += 2
-        if (d4 == 2):
-            sum += 2
-        if (d5 == 2):
-            sum += 2
-        return sum
+        dices = (d1, d2, d3, d4, d5)
+        total=0
+        for n in dices:
+            if n ==2:
+                total+=n
+        return total 
 
     @staticmethod
     def threes(d1, d2, d3, d4, d5):
-        s = 0
-        if (d1 == 3):
-            s += 3
-        if (d2 == 3):
-            s += 3
-        if (d3 == 3):
-            s += 3
-        if (d4 == 3):
-            s += 3
-        if (d5 == 3):
-            s += 3
-        return s
+        dices = (d1, d2, d3, d4, d5)
+        total=0
+        for n in dices:
+            if n ==3:
+                total+=n
+        return total 
 
     def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
         self.dice = [0] * 5
@@ -59,26 +46,24 @@ class Yatzy:
         self.dice[4] = _5
 
     def fours(self):
-        sum = 0
-        for at in range(5):
-            if (self.dice[at] == 4):
-                sum += 4
-        return sum
+        
+        return self 
 
-    def fives(self):
-        s = 0
-        i = 0
-        for i in range(len(self.dice)):
-            if (self.dice[i] == 5):
-                s = s + 5
-        return s
+    def fives(self.Yatzy):
+        dices = (d1, d2, d3, d4, d5)
+        total=0
+        for n in dices:
+            if n ==5:
+                total+=n
+        return total 
 
     def sixes(self):
-        sum = 0
-        for at in range(len(self.dice)):
-            if (self.dice[at] == 6):
-                sum = sum + 6
-        return sum
+        dices = (d1, d2, d3, d4, d5)
+        total=0
+        for n in dices:
+            if n ==6:
+                total+=n
+        return total 
 
     def score_pair(self, d1, d2, d3, d4, d5):
         counts = [0] * 6
