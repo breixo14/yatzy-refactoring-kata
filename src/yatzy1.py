@@ -1,40 +1,24 @@
 class Yatzy:
-
+    ZERO=0
+    FIFTY=50
+    
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
-        total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
-        return total
+        return d1+d2+d3+d4+d5
 
     @staticmethod
     def yatzy(dice):
-        counts = [0] * (len(dice) + 1)
-        for die in dice:
-            counts[die - 1] += 1
-        for i in range(len(counts)):
-            if counts[i] == 5:
-                return 50
-        return 0
+        if all(dado == dice[0] for dado in dice):
+            return Yatzy.FIFTY
+        return Yatzy.ZERO
 
     @staticmethod
     def ones(d1, d2, d3, d4, d5):
-        sum = 0
-        if (d1 == 1):
-            sum += 1
-        if (d2 == 1):
-            sum += 1
-        if (d3 == 1):
-            sum += 1
-        if (d4 == 1):
-            sum += 1
-        if (d5 == 1):
-            sum += 1
-
-        return sum
+        lista= (d1, d2, d3, d4, d5)
+        for i in range(1, 6):
+            if count(i) in lista== 2:
+                return 2 
+        return 0
 
     @staticmethod
     def twos(d1, d2, d3, d4, d5):
