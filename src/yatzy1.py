@@ -16,19 +16,19 @@ class Yatzy:
        return *dice
     
     def twos(*dice):
-        return sum(n for n in dice if n ==2)
+        return sum(n for n in dice if n == Pips.TWO.Value)
     
     def threes(*dice):
-        return sum(n for n in dice if n ==3)
+        return sum(n for n in dice if n == Pips.THREE.Value)
 
     def fours(*dice):
-        return sum(n for n in dice if n ==4)
+        return sum(n for n in dice if n == Pips.FOUR.Value)
 
     def fives(*dice):
-        return sum(n for n in dice if n ==5)
+        return sum(n for n in dice if n == Pips.FIVE.Value)
 
     def sixes(*dice):
-        return sum(n for n in dice if n ==6)
+        return sum(n for n in dice if n == Pips.SIX.Value)
 
     def score_pair(self, d1, d2, d3, d4, d5):
         counts = [0] * 6
