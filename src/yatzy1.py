@@ -1,7 +1,7 @@
 class Yatzy:
     ZERO=0
     FIFTY=50
-    
+     
     @staticmethod
     def chance(d1, d2, d3, d4, d5):
         return d1+d2+d3+d4+d5
@@ -11,59 +11,24 @@ class Yatzy:
         return Yatzy.FIFTY if all(dado == dice[0] for dado in dice) else Yatzy.ZERO
         
 
-    @staticmethod
-    def ones(d1, d2, d3, d4, d5):
-        dices =(d1, d2, d3, d4, d5)
-        unos=dices.count(1)
-        if unos>0:
-            return unos
-        return 0
 
-    @staticmethod
-    def twos(d1, d2, d3, d4, d5):
-        dices = (d1, d2, d3, d4, d5)
-        total=0
-        for n in dices:
-            if n ==2:
-                total+=n
-        return total 
+    def ones(*dice):
+       return *dice
+    
+    def twos(*dice):
+        return sum(n for n in dice if n ==2)
+    
+    def threes(*dice):
+        return sum(n for n in dice if n ==3)
 
-    @staticmethod
-    def threes(d1, d2, d3, d4, d5):
-        dices = (d1, d2, d3, d4, d5)
-        total=0
-        for n in dices:
-            if n ==3:
-                total+=n
-        return total 
+    def fours(*dice):
+        return sum(n for n in dice if n ==4)
 
-    def __init__(self, d1=0, d2=0, d3=0, d4=0, _5=0):
-        self.dice = [0] * 5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+    def fives(*dice):
+        return sum(n for n in dice if n ==5)
 
-    def fours(self):
-        
-        return self 
-
-    def fives(self.Yatzy):
-        dices = (d1, d2, d3, d4, d5)
-        total=0
-        for n in dices:
-            if n ==5:
-                total+=n
-        return total 
-
-    def sixes(self):
-        dices = (d1, d2, d3, d4, d5)
-        total=0
-        for n in dices:
-            if n ==6:
-                total+=n
-        return total 
+    def sixes(*dice):
+        return sum(n for n in dice if n ==6)
 
     def score_pair(self, d1, d2, d3, d4, d5):
         counts = [0] * 6
