@@ -1,0 +1,30 @@
+# VSCode
+.vscode/
+*.code-workspace
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Pytest
+.pytest_cache/
+
+# Personal notes
+doc/
+
+# Coverage
+.coverage
+htmlcov/
+.cache
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.*
