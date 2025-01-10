@@ -30,18 +30,14 @@ class Yatzy:
     def sixes(*dice):
         return sum(n for n in dice if n == Pips.SIX.Value)
 
-    def score_pair(self, d1, d2, d3, d4, d5):
-        counts = [0] * 6
-        counts[d1 - 1] += 1
-        counts[d2 - 1] += 1
-        counts[d3 - 1] += 1
-        counts[d4 - 1] += 1
-        counts[d5 - 1] += 1
-        at = 0
-        for at in range(6):
-            if (counts[6 - at - 1] == 2):
-                return (6 - at) * 2
-        return 0
+    def score_pair(*dice):
+        lista=0
+        for n in range(1, 6):
+            if dice.count(n)==2 and n>lista:
+                lista=n
+        return lista
+                
+        
 
     @staticmethod
     def two_pair(d1, d2, d3, d4, d5):
